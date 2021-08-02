@@ -8,4 +8,5 @@ As someone who has coding experience but is unfamiliar with using Powershell/Win
 ### Getting Started
 The first step to setting up scTPA is to familiarize yourself with Microsoft's Powershell application. I was mislead into thinking I had to download Ubuntu for Microsoft in order to get this program to run. Maybe you can run it this way, but I personally ran into a lot of permission issues using a 3rd-party application. Powershell is Microsoft's equivalent to Ubuntu on Linux or Mac's terminal application. It will allow you to open and run the R script that contains the scTPA application.
 This is what it looks like when you open Powershell:
+![Poweshell Image](
 
