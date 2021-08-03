@@ -9,12 +9,13 @@ As someone who has coding experience but is unfamiliar with using Powershell/Win
 The first step to setting up scTPA is to familiarize yourself with Microsoft's Powershell application. I was mislead into thinking I had to download Ubuntu for Microsoft in order to get this program to run. Maybe you can run it this way, but I personally ran into a lot of permission issues using a 3rd-party application. Powershell is Microsoft's equivalent to Ubuntu on Linux or Mac's terminal application. It will allow you to open and run the R script that contains the scTPA application.
 This is what it looks like when you open Powershell:
 
-![Poweshell Image](https://github.com/oellis1/scTPA-Tutorial/blob/main/powershell1.png)
+![Powershell Image](https://github.com/oellis1/scTPA-Tutorial/blob/main/powershell1.png)
 
 One thing to note is that PS H:/>-- **this shows your directory**. A directory is the space in which Powershell will be looking inside your computer. Some simple commands:
 1. cd (Change directory)
 
     If I'm in my home directory, H:/, and I want to move to my "scTPA_local-v7" folder, I could use the command 'cd [path]'. To get the path of the folder, hold shift and right click, then select "Copy as path." To paste into Powershell, right-click. Note that when you paste the pathname into Powershell, it will include quotes. Get rid of these, then hit enter to run the command. You should see the new directory listed after PS. 
+ ![1](https://github.com/oellis1/scTPA-Tutorial/blob/main/Screen%20Shot%202021-08-02%20at%205.39.28%20PM.png)
     If the directory (folder) you want to switch to shows up when you execute 'ls', then you do not need to list the full pathname. Although my full path would be H:/scTPA_local-v7, I could also do 'cd scTPA_local-v7'. Unless you specify a full path, the computer will look only in your current directory, and since this folder is in my current directory (H:/), it will find the folder.
 2. ls (list)
 
