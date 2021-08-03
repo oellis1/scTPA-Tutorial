@@ -16,11 +16,16 @@ One thing to note is that PS H:/>-- **this shows your directory**. A directory i
 
     If I'm in my home directory, H:/, and I want to move to my "scTPA_local-v7" folder, I could use the command 'cd [path]'. To get the path of the folder, hold shift and right click, then select "Copy as path." To paste into Powershell, right-click. Note that when you paste the pathname into Powershell, it will include quotes. Get rid of these, then hit enter to run the command. You should see the new directory listed after PS. 
  ![1](https://github.com/oellis1/scTPA-Tutorial/blob/main/Screen%20Shot%202021-08-02%20at%205.40.56%20PM.png)
+ ![1.1](https://github.com/oellis1/scTPA-Tutorial/blob/main/Screen%20Shot%202021-08-02%20at%206.12.58%20PM.png)
  
     If the directory (folder) you want to switch to shows up when you execute 'ls', then you do not need to list the full pathname. Although my full path would be H:/scTPA_local-v7, I could also do 'cd scTPA_local-v7'. Unless you specify a full path, the computer will look only in your current directory, and since this folder is in my current directory (H:/), it will find the folder.
 2. ls (list)
 
     This command will show all of the items in the directory. For example, here is the result of running ls inside my H:/ directory. It should be identical to the list you see when you open your folder in file explorer.
+    ![2] (https://github.com/oellis1/scTPA-Tutorial/blob/main/Screen%20Shot%202021-08-02%20at%205.46.38%20PM.png)
+    ![3] (https://github.com/oellis1/scTPA-Tutorial/blob/main/Screen%20Shot%202021-08-02%20at%205.46.44%20PM.png)
+    
+    
     
 ### Installing R Dependencies
 Dependencies are packages, libraries, etc. which our program will need to have in order to run. The guide to installing scTPA gives you a script to install everything, but this won't actually work for all of the packages because some of the syntax is wrong. 
@@ -79,7 +84,9 @@ library(scde)
 There we go!
   
 ### Installing Dependencies Through Powershell
-Now to download the scTPA application. Search for Powershell in the start button. Right click on it, and select "Run as Administrator." If asked, allow Powershell to make changes to your computer. Whatever directory you are currently in is the one that you will be downloading scTPA into, so make sure it is your preferred directory. Then, execute the following code, line by line:
+Now to download the scTPA application. Search for Powershell in the start button. Right click on it, and select "Run as Administrator." If asked, allow Powershell to make changes to your computer. 
+    ![5](https://github.com/oellis1/scTPA-Tutorial/blob/main/Screen%20Shot%202021-08-02%20at%206.08.54%20PM.png)
+Whatever directory you are currently in is the one that you will be downloading scTPA into, so make sure it is your preferred directory. Then, execute the following code, line by line:
   ```R
   wget http://sctpa.bio-data.cn:8888/sctpa/resources/scTPA_local-v7.zip
   unzip scTPA_local-v7.zip
@@ -87,12 +94,24 @@ Now to download the scTPA application. Search for Powershell in the start button
   ```
 It may take a while to download. Once you are done, your directory should be "PS .....scTPA_local-v7>". 
 
-Now, you will need to download dependent python packages. First, make sure you have python installed. You can do this by typing python into the search/start button. If it doesn't show up, you can download python here: https://www.python.org/downloads/release/python-396/
+Now, you will need to download dependent python packages. First, make sure you have python installed. You can do this by typing python into the search/start button. 
+![6](https://github.com/oellis1/scTPA-Tutorial/blob/main/Screen%20Shot%202021-08-02%20at%206.15.44%20PM.png)
+    
+If it doesn't show up, you can download python here: https://www.python.org/downloads/release/python-396/
 Once python is installed, you will also need to make sure you have "pip" installed. This is a python package installer that runs through Powershell. To check it if is installed, type 'pip' into Powershell and hit enter. If you get the error "'pip' is not recognized as the name of a cmdlet, function, script file, or operable program...", then it is not installed. Follow the instructions here to install it: https://www.geeksforgeeks.org/how-to-install-pip-on-windows/#:~:text=pip%20can%20be%20downloaded%20and%20installed%20using%20command-line,Voila%21%20pip%20is%20now%20installed%20on%20your%20system.
-  
-If you have installed everything and the 'python' command still does not bring up the >>> (as below), it means you need to add some variables to your path. Search for "Edit the System Environment Variables," and run it as an administator. Allow it to make changes, then click "Environment Variables."
+ 
+If you have installed everything and the 'python' command still does not bring up the >>> (as below), it means you need to add some variables to your path. 
+![7](https://github.com/oellis1/scTPA-Tutorial/blob/main/Screen%20Shot%202021-08-02%20at%206.22.30%20PM.png)
+    
+Search for "Edit the System Environment Variables," and run it as an administator. Allow it to make changes, then click "Environment Variables."
   
 Under path, you will need to add the location of python.exe. Search for python.exe in your file explorer, and then copy it as a pathname. Mine is C:/Python39/python.exe-- yours may be different. Delete /python.exe so you have only C:/Python39. Add this to the list of path variables. Restart your computer and to run the python command-- it should work now. Repeat this process for Rscript.exe, and add its path to the Path variable as well. 
+![8](https://github.com/oellis1/scTPA-Tutorial/blob/main/Screen%20Shot%202021-08-02%20at%206.23.31%20PM.png)
+    
+![9](https://github.com/oellis1/scTPA-Tutorial/blob/main/Screen%20Shot%202021-08-02%20at%206.23.35%20PM.png)
+    
+![10](https://github.com/oellis1/scTPA-Tutorial/blob/main/Screen%20Shot%202021-08-02%20at%207.06.54%20PM.png)
+    
 
 Now, you should be able to use the 'pip install' command to install all of the dependent packages. 
 ```python
