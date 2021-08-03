@@ -103,6 +103,84 @@ pip install multiprocessing
   ```
 
 ### Running scTPA
+To run scTPA, you will need to use the Rscript command. If you have added the path to your environment variables, you should be able to run Rscript and get the following output:
+
+Once this works, you are ready to run scTPA. The different options are as follows:
+    
+```
+    Options:
+        -f FILE, --file=FILE
+                Gene expression profile, genes X cells. The processed gene expression profile can be generated using different platforms, such as 10X genomics and Smart-seq. The values in this profile should be non-negative, and this file can be uploaded depending on data types of UMI count, read count, RPKM, FPKM, CPM or TPM. [default= NULL]
+
+        --cellType=CELLTYPE
+                Optional. Cell type file. First column is cell name (same as the colnames of gene expression profile), second column is cell type. No header names. [default= NULL]
+
+        --normalize=NORMALIZE_METHOD
+                Methods used for normalization. Available options are 'none', 'log', 'CLR', 'RC' 'sctrancform' or 'scran'. 'log', 'CLR' 'RC' and 'sctrancform': The normalization methods from Seurat R package. 'scran': The normalization strategy for scRNA-seq is implemented based on the deconvolutional size factor using the scran R package. [default= none]
+
+        --min_cells=MIN_CELLS
+                Genes must be detected within a minimum number of cells. Used for filtering genes. [default= 3]
+
+        --min_features=MIN_FEATURES
+                Cells must have at least the minimum number of genes. Used for filtering cells. [default= 200]
+
+        --species=SPECIES
+                Species. Available options are 'homo' or 'mus'. [default= homo]
+
+        --imputation=IMPUTATION
+                Imputation method. Available options are 'scImpute' or 'none'. 'scImpute': impute scRNA-seq profile using scImpute R package. [default= FALSE]
+
+        --data_type=FILE
+                Data type of gene expression profile∩╝îAvailable options are 'TPM' or 'count'. 'count' indicate that the expression profile is non-negative UMI or read count. 'TPM' indicate that the expression profile is normalized FPKM, RPKM, CPM or TPM. [default= TPM]
+
+        --pathway_database=PATHWAY_DATABASE
+                Pathway database. Avalible database are avalible on https://github.com/sulab-wmu/scTPA#details [default= kegg]
+
+        --user_pathway=USER_PATHWAY
+                Optional. User defined pathway file in gmt format. [default = NULL]
+
+        --pas_method=PAS_METHOD
+                PAS (pathway activation signatures) transformation method. Available options are 'pagoda2', 'Vision', 'AUCell', 'gsva', 'ssgsea', 'zscore' or 'plage'. [default= ssgsea]
+
+        --para_size=PARA_SIZE
+                Number of kernels used for parallel computation. [default= 3]
+
+        --cluster_method=CLUSTER_METHOD
+                Clustering method. Available options are 'seurat', 'hclust', 'simlr', 'kmedoids', 'kmeans' or 'dbscan'. [default= seurat]
+
+        --seurat_dims=SEURAT_DIMS
+                Dimensions of PCA used in Seurat FindNeighbors method. [default= 8]
+
+        --seurat_resolution=SEURAT_RESOLUTION
+                Resolution used in Seurat FindClusters method. [default= 0.5]
+
+        --k_cluster=K_CLUSTER
+                Number of clusters. Used for clustering methods except Seurat and dbscan. [default= 5]
+
+        --min_pts=MIN_PTS
+                Number of nearest neighbors used in dbscan clustering. [default= 3]
+
+        --dims=DIMS
+                Number of PCA dimensions used for TSNE or UMAP. [default= 20]
+
+        --marker_method=FIND_MAKER_METHOD
+                Method for finding siginificant markers. [default= wilcox]
+
+        --logFC_thre=THRESHOLD_LOGFC
+                logfc.threshold Limit testing to genes which show, on average, at least X-fold difference (log-scale) between the two groups of cells. This parameter was same as the 'logfc.threshold' of FindAllMarkers in Seurat R package. [default= 0.25]
+
+        --min_pct=MIN_PCT
+                Only test genes that are detected in a minimum fraction of min.pct cells in either of the two populations will be retain. This parameter was same as the 'min.pct' of FindAllMarkers in Seurat R package. [default= 0.1]
+
+        --shown_markers=SHOWN_MARKERS
+                The number of markers for each cell type used for heatmap visualization. [default= 3]
+
+        -o OUT_DIR, --out_dir=OUT_DIR
+                Output folder. [default= NULL]
+
+        -h, --help
+                Show this help message and exit
+    ```
   
 
 
