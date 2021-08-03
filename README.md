@@ -126,6 +126,8 @@ pip install multiprocessing
 ### Running scTPA
 To run scTPA, you will need to use the Rscript command. If you have added the path to your environment variables, you should be able to run Rscript and get the following output:
 
+![11](https://github.com/oellis1/scTPA-Tutorial/blob/main/Screen%20Shot%202021-08-02%20at%208.01.42%20PM.png)
+    
 Once this works, you are ready to run scTPA. The different options are as follows:
     
 ```
